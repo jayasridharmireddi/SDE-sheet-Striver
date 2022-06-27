@@ -1,0 +1,56 @@
+To solve this q.n, first learn how to generate palindomes, check for palindromes, finding longest palindrome length and wt is it
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		String s="abbaabbaba";
+		System.out.println("Given input is "+s);
+		ArrayList<String> li= new ArrayList<>();
+		for(int i=0;i<s.length();i++){
+		    String st="";
+		    for(int j=i;j<s.length();j++){
+		        st+=s.charAt(j);
+		        if(palind(st)){
+		            li.add(st);
+		       }
+		    }
+		}
+		System.out.println(li);
+		int max=0;
+		String fin="";
+		for(int k=0;k<li.size();k++){
+		    if(li.get(k).length()>max){
+		        max=li.get(k).length();
+		        fin=li.get(k);
+		    }
+		}
+		System.out.println("Longest Palindromic string in the given input is is: "+fin+" with length of "+max);
+	}
+	public static boolean palind(String s){
+	    int i=0,j=s.length()-1;
+	    while(i<j){
+	        if(s.charAt(i)!=s.charAt(j)){
+	            return false;
+	        }
+	        i++;
+	        j--;
+	    }
+	    return true;
+	}
+}  --------------------------------------------------------THIS IS THE SOL.N FOR ALL THE ABOVE Q.S
+
+.....................................................................................................................................................................
+
+
+
+
+
+
+
+The above sol.n is in O(n^2) TC
+
+OPTIMISED SOL.N
+
+
